@@ -3,8 +3,10 @@
     <head>
         <meta http-equiv="content-language" content="en" />
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>My zoo keep app</title>
+        <link rel="stylesheet" href="./style.css" />
+        <script defer src="./src/index.js"></script>
     </head>
     <body>
         <header id="menu">
@@ -12,15 +14,28 @@
         </header>
         <div class="container">
             <form id="animal-form">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" />
-                <label for="name">Image URL</label>
-                <input type="text" id="image_url" name="image">
-                <label for="description">Description</label>
-                <textarea name="description" id="description"></textarea>
-                <button type="submit">Adopt Animal</button>
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" />
+                </div>
+                <br>
+                <div>
+                    <label for="name">Image URL:</label>
+                    <input type="text" id="image_url" name="image">
+                </div>
+                <br>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea name="description" id="description"></textarea>
+                </div>
+                <br>
+                <div>
+                    <button type="submit">Adopt Animal</button>
+                </div>                
             </form>
-        </div>
-        
+            <ul id="animal-list" class="cards">
+                <!-- Animals here -->
+            </ul>
+        </div>        
     </body>
 </html>

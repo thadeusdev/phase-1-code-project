@@ -4,3 +4,39 @@
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
 }
+body{
+    background-color: #fdf9ff;
+}
+header{
+    text-align: center;
+    margin: 15px 0 ;
+}
+form{
+    padding: 10px;
+}
+#animal-form{
+    width: 800px;
+    background: rgb(47,79,79);
+    margin: auto;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    border-radius: 15px 15px 0 0;
+}
+label{
+    margin-left: 25px;
+    margin-top: 30px;
+    width: 125px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+}
+.cards {
+    text-align: center;
+    border: grey solid 1px;
+    padding: 1rem;
+    width: 15rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 1rem 2rem;
+    box-shadow: 3px 4px #e04b52
+}
