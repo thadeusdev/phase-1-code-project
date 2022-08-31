@@ -6,7 +6,13 @@ function renderOneAnimal(animal){
     card.innerHTML=`
     <img class="cards" src="${animal.image_link}">
     <div class="content">
-    <h4>${animal.name}</h4>
+        <h4>Name: ${animal.name}</h4>
+        <p>$<span class="donation-count">${animal.donation}</span></p>
+        <p>Habitat: ${animal.description}</p>
+    </div>
+    <div>
+        <button style='margin-right:120px'>Donate $0</button>
+        <button>Set Free</button>
     </div>
     `
     //add animal card to the DOM
