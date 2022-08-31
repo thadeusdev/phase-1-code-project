@@ -1,10 +1,10 @@
+let status = false;
 //DOM render functions
 function renderOneAnimal(animal){
     //Build animal
     let card = document.createElement('li')
-    card.className = 'card'
     card.innerHTML=`
-    <img src="${animal.image_link}">
+    <img class="cards" src="${animal.image_link}">
     <div class="content">
     <h4>${animal.name}</h4>
     </div>
@@ -19,8 +19,9 @@ function renderOneAnimal(animal){
 function getAllAnimals(){
     fetch('http://localhost:3000/animal')
     .then(res => res.json())
-    .then((animal => renderOneAnimal(animal)))
+    .then(animalData => animalData.forEach(animal => renderOneAnimal(animal)))
 }
+getAllAnimals()
 
 //Initial Render
 //Get data and render animal to DOM
