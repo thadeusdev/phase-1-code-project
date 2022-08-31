@@ -14,12 +14,10 @@ function renderOneAnimal(animal){
 }
 
 
-
-
 //fetch requests
 // Get fetch for animal resources
 function getAllAnimals(){
-    fetch('https://zoo-animal-api.herokuapp.com/animals/rand/9')
+    fetch('http://localhost:3000/animal')
     .then(res => res.json())
     .then((animal => renderOneAnimal(animal)))
 }
