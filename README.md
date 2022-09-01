@@ -1,5 +1,5 @@
 # Zoo animal keeping project
-##Deliverables##
+###Deliverables
 - creating card
 - fetching data from the server
 - updating the data with fetch 'POST'
