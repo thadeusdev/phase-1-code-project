@@ -8,8 +8,7 @@ function handleSubmit(e){
         name: e.target.name.value,
         image_link: e.target.image_link.value,
         description: e.target.description.value,
-        donations: 0,
-        id:1
+        donations: 0
     }
     console.log(animalObj)
     renderOneAnimal(animalObj)
@@ -30,15 +29,19 @@ function renderOneAnimal(animal){
     </div>
     <div>
         <button style='margin-right:120px' id="donate">Donate $50</button>
-        <button>Set Free</button>
+        <button id="set-free">Set Free</button>
     </div>
     `
     //Event listener to update donations
-    card.querySelector('#donate').addEventListener('click', () => {
+    card.querySelector('#donate').addEventListener('click', (e) => {
+        e.preventDefault()
         animal.donations+=50
         card.querySelector('span').textContent = animal.donations
         updateDonations(animal)
     })
+
+    card.querySelector('#set-free').addEventListener('click', () => card.remove())
+    // deleteAnimal(animal.id)
 
     //add animal card to the DOM
     document.querySelector('#animal-list').appendChild(card)
@@ -80,6 +83,18 @@ function updateDonations(animalObj){
     .then(res => res.json())
     .then(animal => console.log(animal))
 }
+
+// function deleteAnimal(id){
+//     fetch(`http://localhost:3000/animal/${id}`,{
+//         method: 'DELETE',
+//         headers: {
+//             'Content-Type': 'application/json',
+//             'Accept': 'application/json'
+//         },
+//     })
+//     .then(res => res.json())
+//     .then(animal => console.log(animal))
+// }
 
 //Initial Render
 //Get data and render animal to DOM
