@@ -1,68 +1,39 @@
 {
-"animal":[
+  "animal": [
     {
       "name": "Rhinoceros Hornbill",
-      "latin_name": "Buceros rhinoceros",
-      "animal_type": "Bird",
-      "active_time": "Diurnal",
-      "length_min": "3.13",
-      "length_max": "3.46",
-      "weight_min": "4.5",
-      "weight_max": "6.5",
-      "lifespan": "35",
-      "habitat": "Forest",
-      "diet": "Fruit and small animals",
       "description": "They have black feathers on their bodies and white feathers on their legs. Their tails are white with a black band. Both the beak and casque are orange and red in color.",
       "image_link": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Buceros_rhinoceros_-Singapore_Zoo_-pair-8a.jpg",
-      "donation": 150
+      "donations": 0,
+      "1d": 1
     },
     {
       "name": "Burmese Python",
-      "latin_name": "Python molurus",
-      "animal_type": "Reptile",
-      "active_time": "Nocturnal",
-      "length_min": "16",
-      "length_max": "25",
-      "weight_min": "140",
-      "weight_max": "200",
-      "lifespan": "20",
-      "habitat": "Tropical forest",
-      "diet": "Birds, mammals, and reptiles",
       "description": "The Burmese python is a dark-colored non-venomous snake with many brown blotches bordered by black down the back.",
       "image_link": "https://upload.wikimedia.org/wikipedia/commons/8/85/Burmese_python_%286887388927%29.jpg",
-      "donation": 49
+      "donations": 0,
+      "1d": 2
     },
     {
       "name": "Chuckwalla",
-      "latin_name": "Sauromalus ater",
-      "animal_type": "Reptile",
-      "active_time": "Diurnal",
-      "length_min": "1",
-      "length_max": "1.3",
-      "weight_min": "1.6",
-      "weight_max": "2",
-      "lifespan": "15",
-      "habitat": "Rocky desert and thorn forest",
-      "diet": "Leaves and fruit",
       "description": "Chuckwallas are stocky, wide-bodied lizards with flattened midsections and prominent bellies. Their tails are thick, tapering to a blunt tip.",
       "image_link": "https://upload.wikimedia.org/wikipedia/commons/1/15/Sauromalus_ater_%283%29.jpg",
-      "donation": 54
+      "donations": 0,
+      "1d": 3
     },
     {
       "name": "Black-footed Cat",
-      "latin_name": "Felis nigripes",
-      "animal_type": "Mammal",
-      "active_time": "Nocturnal",
-      "length_min": "1.1",
-      "length_max": "1.7",
-      "weight_min": "3.3",
-      "weight_max": "6.5",
-      "lifespan": "5",
-      "habitat": "Desert, savannah, and scrubland",
-      "diet": "Mice, insects, spiders, lizards, and birds",
       "description": "Despite its name, only the soles of its feet are black or dark brown. With its bold small spots and stripes on the tawny fur, it is well camouflaged, especially on moonlit nights.",
       "image_link": "https://upload.wikimedia.org/wikipedia/commons/d/da/Zoo_Wuppertal_Schwarzfusskatze.jpg",
-      "donation": 36
+      "donations": 0,
+      "1d": 4
+    },
+    {
+      "id": 10,
+      "name": "gibbon",
+      "image_link": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Witwanggibbon_M.jpg/220px-Witwanggibbon_M.jpg",
+      "description": "Gibbons (/ˈɡɪbənz/) are apes in the family Hylobatidae (/ˌhaɪləˈbætɪdiː/). The family historically contained one genus, but now is split into four extant genera and 20 species. Gibbons live in subtropical and tropical rainforest from eastern Bangladesh to Northeast India to southern China and Indonesia (including the islands of Sumatra, Borneo and Java).",
+      "donations": 0
     }
   ]
 }

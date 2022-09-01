@@ -1,4 +1,22 @@
-let status = false;
+//Event listeners
+document.querySelector('#animal-form').addEventListener('submit', handleSubmit)
+
+//Event handlers
+function handleSubmit(e){
+    e.preventDefault()
+    let animalObj = {
+        id: 10,
+        name: e.target.name.value,
+        image_link: e.target.image_link.value,
+        description: e.target.description.value,
+        donations: 0
+    }
+    console.log(animalObj)
+    renderOneAnimal(animalObj)
+    addAnimal(animalObj)
+}
+
+
 //DOM render functions
 function renderOneAnimal(animal){
     //Build animal
@@ -7,11 +25,11 @@ function renderOneAnimal(animal){
     <img class="cards" src="${animal.image_link}">
     <div class="content">
         <h4>Name: ${animal.name}</h4>
-        <p>$<span class="donation-count">${animal.donation}</span></p>
-        <p>Habitat: ${animal.description}</p>
+        <p>$<span class="donation-count">${animal.donations}</span></p>
+        <p>${animal.description}</p>
     </div>
     <div>
-        <button style='margin-right:120px'>Donate $0</button>
+        <button style='margin-right:120px'>Donate $50</button>
         <button>Set Free</button>
     </div>
     `
@@ -27,7 +45,21 @@ function getAllAnimals(){
     .then(res => res.json())
     .then(animalData => animalData.forEach(animal => renderOneAnimal(animal)))
 }
-getAllAnimals()
+
+function addAnimal(animalObj){
+    // console.log(JSON.stringify(animalObj))
+    fetch('http://localhost:3000/animal',{
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(animalObj)
+    })
+    .then(res => res.json())
+    .then(animal => console.log(animal))
+    .catch(error => console.log(error.message))
+}
 
 //Initial Render
 //Get data and render animal to DOM
