@@ -4,12 +4,12 @@ document.querySelector('#animal-form').addEventListener('submit', handleSubmit)
 //Event handlers
 function handleSubmit(e){
     e.preventDefault()
-    let animalObj = {
-        id: 10,
+    let animalObj = {        
         name: e.target.name.value,
         image_link: e.target.image_link.value,
         description: e.target.description.value,
-        donations: 0
+        donations: 0,
+        id:1
     }
     console.log(animalObj)
     renderOneAnimal(animalObj)
@@ -29,10 +29,17 @@ function renderOneAnimal(animal){
         <p>${animal.description}</p>
     </div>
     <div>
-        <button style='margin-right:120px'>Donate $50</button>
+        <button style='margin-right:120px' id="donate">Donate $50</button>
         <button>Set Free</button>
     </div>
     `
+    //Event listener to update donations
+    card.querySelector('#donate').addEventListener('click', () => {
+        animal.donations+=50
+        card.querySelector('span').textContent = animal.donations
+        updateDonations(animal)
+    })
+
     //add animal card to the DOM
     document.querySelector('#animal-list').appendChild(card)
 }
@@ -59,6 +66,19 @@ function addAnimal(animalObj){
     .then(res => res.json())
     .then(animal => console.log(animal))
     .catch(error => console.log(error.message))
+}
+
+function updateDonations(animalObj){
+    fetch(`http://localhost:3000/animal/${animalObj.id}`,{
+        method: 'PATCH',
+        headers:{
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(animalObj)
+    })
+    .then(res => res.json())
+    .then(animal => console.log(animal))
 }
 
 //Initial Render
