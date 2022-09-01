@@ -40,9 +40,13 @@ function renderOneAnimal(animal){
         updateDonations(animal)
     })
 
-    card.querySelector('#set-free').addEventListener('click', () => card.remove())
-    // deleteAnimal(animal.id)
-
+    card.querySelector('#set-free').addEventListener('click', (e) => {
+        // remove card from DOM
+        // remove animab from db.json
+        deleteAnimal(animal.id)
+        card.remove();
+    })
+    
     //add animal card to the DOM
     document.querySelector('#animal-list').appendChild(card)
 }
@@ -84,17 +88,17 @@ function updateDonations(animalObj){
     .then(animal => console.log(animal))
 }
 
-// function deleteAnimal(id){
-//     fetch(`http://localhost:3000/animal/${id}`,{
-//         method: 'DELETE',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//     })
-//     .then(res => res.json())
-//     .then(animal => console.log(animal))
-// }
+function deleteAnimal(id){
+    fetch(`http://localhost:3000/animal/${id}`,{
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+    })
+    .then(res => res.json())
+    .then(animal => console.log(animal))
+}
 
 //Initial Render
 //Get data and render animal to DOM
@@ -103,3 +107,4 @@ function initialize(){
     //animalData.forEach(animal => renderOneAnimal(animal))
 }
 initialize()
+
